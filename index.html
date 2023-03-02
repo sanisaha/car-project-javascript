@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car List</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <form id="form" action="">
+      <div>
+        <h1>Insert car data</h1>
+      </div>
+      <div>
+        <label for="">License number</label>
+        <input id="license" type="text" />
+      </div>
+      <div>
+        <label for="">Car maker</label>
+        <input id="maker" type="text" />
+      </div>
+      <div>
+        <label for="">Car model</label>
+        <input id="model" type="text" />
+      </div>
+      <div>
+        <label for="">Car owner</label>
+        <input id="owner" type="text" />
+      </div>
+      <div>
+        <label for="">Car price</label>
+        <input id="price" type="number" />
+      </div>
+      <div>
+        <label for="">Car color</label>
+        <input id="color" type="text" />
+      </div>
+      <button id="btn-submit" type="submit" onclick="addCar(event)">
+        Add car
+      </button>
+    </form>
+    <div>
+      <table id="table">
+        <tr>
+          <th>License</th>
+          <th>Maker</th>
+          <th>Model</th>
+          <th>Owner</th>
+          <th>Price</th>
+          <th>Color</th>
+        </tr>
+      </table>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
