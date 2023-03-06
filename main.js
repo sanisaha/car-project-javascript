@@ -7,6 +7,9 @@ const price = document.querySelector('#price')
 const color = document.querySelector('#color')
 const table = document.querySelector('#table')
 const form = document.querySelector('#form')
+licenseSearch=document.getElementById('licensesearch');
+resultarea=document.getElementById('result');
+
 
 const allCars = [];
 
@@ -49,6 +52,7 @@ const addCar = (event) => {
 
 
     form.reset()
+    window.location.reload();
 }
 const newStoredCars = JSON.parse(window.localStorage.getItem('test'));
 
@@ -58,7 +62,6 @@ newStoredCars.forEach(element => {
 });
 
 function addTable (newStoredCars){
-    console.log(newStoredCars);
     const newTableRow = document.createElement('tr')
     newTableRow.innerHTML = 
     `<td>${newStoredCars.licenseNumber}</td>
@@ -69,4 +72,14 @@ function addTable (newStoredCars){
     <td>${newStoredCars.colorName}</td>
     `
     table.appendChild(newTableRow)
+}
+async function search(){
+    const license=licenseSearch.value;
+    const data = newStoredCars;
+    data.forEach(element => {
+        if(element.licenseNumber == license){
+            resultarea.textContent= `Car Maker: ${element.makerName}, Car Model: ${element.modelName}, Car Owner: ${element.ownerName}`
+        }
+    });
+    
 }
