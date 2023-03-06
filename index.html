@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -12,33 +18,34 @@
       <div>
         <h1>Insert car data</h1>
       </div>
-      <div>
+      <div class="car_data">
         <label for="">License number</label>
         <input id="license" type="text" />
       </div>
-      <div>
+      <div class="car_data">
         <label for="">Car maker</label>
         <input id="maker" type="text" />
       </div>
-      <div>
+      <div class="car_data">
         <label for="">Car model</label>
         <input id="model" type="text" />
       </div>
-      <div>
+      <div class="car_data">
         <label for="">Car owner</label>
         <input id="owner" type="text" />
       </div>
-      <div>
+      <div class="car_data">
         <label for="">Car price</label>
         <input id="price" type="number" />
       </div>
-      <div>
+      <div class="car_data">
         <label for="">Car color</label>
         <input id="color" type="text" />
       </div>
-      <button id="btn-submit" type="submit" onclick="addCar(event)">
+      <button id="btn-add" type="submit" onclick="addCar(event)">
         Add car
       </button>
+      <button id="btn-reset" type="reset">reset</button>
     </form>
     <div>
       <table id="table">

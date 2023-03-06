@@ -19,11 +19,7 @@ const allCars = [];
 //         this.colorName = color
 // }
 
-const newStoredCars = JSON.parse(window.localStorage.getItem('users'));
 
-newStoredCars.forEach(item => {
-    addTable(...item)
-});
 const addCar = (event) => {
 
     event.preventDefault()
@@ -38,16 +34,28 @@ const addCar = (event) => {
     let cars = {licenseNumber:license.value,makerName:maker.value,modelName:model.value,ownerName:owner.value,priceNumber:price.value,colorName:color.value
     }
     addTable(cars)
-    console.log(cars);
-    allCars.push(cars)
-    let storedCars = JSON.parse(window.localStorage.getItem('users'));
-    if(!storedCars){
-        storedCars = []
+    const storedCars = JSON.parse(window.localStorage.getItem('test'));
+    console.log(storedCars);
+
+    if(storedCars == null){
+        allCars.push(cars);
+        localStorage.setItem('test', JSON.stringify(allCars));        
+    } 
+    else {
+        storedCars.push(cars)
+        localStorage.setItem('test', JSON.stringify(storedCars));
+        console.log('not yet');
     }
-    storedCars.push(allCars)
-    window.localStorage.setItem('users', JSON.stringify(storedCars));
+
+
     form.reset()
 }
+const newStoredCars = JSON.parse(window.localStorage.getItem('test'));
+
+
+newStoredCars.forEach(element => {
+    addTable(element)
+});
 
 function addTable (newStoredCars){
     console.log(newStoredCars);
