@@ -34,8 +34,24 @@ const addCar = (event) => {
     // const priceNumber = price.value
     // const colorName = color.value
 
-    let cars = {licenseNumber:license.value,makerName:maker.value,modelName:model.value,ownerName:owner.value,priceNumber:price.value,colorName:color.value
-    }
+    const cars = {
+        licenseNumber: license.value,
+        makerName: maker.value,
+        modelName: model.value,
+        ownerName: owner.value,
+        priceNumber: price.value,
+        colorName: color.value,
+        discount : function(){
+            if (this.priceNumber > 20000){
+                return (this.priceNumber/100 * 25)
+            } else if (this.priceNumber < 5000){
+                return (this.priceNumber/100 * 10)
+            } else {
+                return (this.priceNumber/100 * 15)
+            }
+        }
+    };
+    resultarea.textContent = cars.discount();
     addTable(cars)
     const storedCars = JSON.parse(window.localStorage.getItem('test'));
     console.log(storedCars);
